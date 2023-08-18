@@ -1,0 +1,668 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --text-color: #f5f5f5;
+  --hover--color: #12f7ff;
+  --bg-color: #250821;
+  --second-bg-color: #292e33;
+  --neon-box-shadow: 0 0 0.5rem #12f7ff;
+  --font-neon-text-shadow: 0 0 10px rgba(18, 247, 255, 0.3),
+    0 0 20px rgba(18, 247, 255, 0.3), 0 0 30px rgba(18, 247, 255, 0.3),
+    0 0 40px rgba(18, 247, 255, 0.3), 0 0 70px rgba(18, 247, 255, 0.3),
+    0 0 80px rgba(18, 247, 255, 0.3), 0 0 100px rgba(18, 247, 255, 0.3),
+    0 0 150px rgba(18, 247, 255, 0.3);
+}
+
+/*---------- our nav bar styling start---------------- */
+.navbar {
+  background: var(--bg-color);
+}
+
+.portfolio-text:hover {
+  text-shadow: var(--font-neon-text-shadow);
+}
+
+nav #header-links a {
+  color: var(--text-color);
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+#header-links li .active-1 {
+  color: var(--hover--color);
+}
+
+#header-links li a:hover {
+  color: var(--hover--color);
+  text-shadow: var(--font-neon-text-shadow);
+}
+
+/*------------------ our navbar styling end----------------- */
+/* our intro section styling start */
+.intro-section {
+  height: 100%;
+  background: var(--bg-color);
+}
+
+.intro-detail p {
+  width: 400px;
+}
+
+.cv-btn button {
+  position: relative;
+  background: transparent;
+  color: var(--hover--color);
+  outline: 2px solid #12f7ff;
+  text-transform: capitalize;
+  margin-right: 10px;
+  border-radius: 5px;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.cv-btn button:hover {
+  color: #250821;
+}
+
+.cv-btn button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  z-index: -1;
+  height: 100%;
+  width: 0%;
+  transition: all 0.3s ease-in-out;
+}
+
+.cv-btn button:hover::after {
+  width: 100%;
+  background: var(--hover--color);
+  box-shadow: var(--font-neon-text-shadow);
+}
+
+#cv-btn-down {
+  background: var(--hover--color);
+  color: var(--bg-color);
+}
+
+.intro-section .img-blob img {
+  display: inline-block;
+  z-index: 2;
+}
+
+.img-blob {
+  position: relative;
+  z-index: 1;
+}
+
+.img-blob::before {
+  content: "";
+  display: block;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--hover--color);
+  box-shadow: var(--font-neon-text-shadow);
+  border-radius: 85% 15% 77% 23% / 28% 59% 41% 72%;
+  animation: blob 2s linear alternate infinite;
+  transition: all 0.3s ease;
+}
+
+@keyframes blob {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25% {
+    border-radius: 51% 49% 70% 30% / 30% 63% 37% 70%;
+  }
+  50% {
+    border-radius: 77% 23% 64% 36% / 13% 79% 21% 87%;
+  }
+  75% {
+    border-radius: 81% 19% 55% 45% / 32% 100% 0% 68%;
+  }
+  100% {
+    border-radius: 85% 15% 77% 23% / 28% 59% 41% 72%;
+  }
+}
+
+/*----- 
+        our icons styling start
+                -------------- */
+.icons-section i {
+  position: relative;
+  background: transparent;
+  height: 40px;
+  width: 40px;
+  color: var(--hover--color);
+  border: none;
+  outline: 2px solid #12f7ff;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.icons-section i:hover {
+  color: var(--bg-color);
+}
+
+.icons-section i::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #000;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.icons-section i:hover::after {
+  z-index: -1;
+  width: 100%;
+  background: var(--hover--color);
+}
+
+/*----- 
+        our icons styling end
+                -------------- */
+/* our intro section styling end */
+
+.about-container {
+  background: var(--second-bg-color);
+  width: 100%;
+  /* height: 100vh; */
+}
+.about-container .img-blob {
+  display: inline-block;
+  z-index: 2;
+}
+.about-container .img-blob::before {
+  content: "";
+  display: block;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--text-color);
+  box-shadow: var(--font-neon-text-shadow);
+  border-radius: 85% 15% 77% 23% / 28% 59% 41% 72%;
+  animation: blob 2s linear alternate-reverse infinite;
+  transition: all 0.3s ease;
+}
+.about-2 button {
+  position: relative;
+  background: transparent;
+  color: var(--hover--color);
+  outline: 2px solid #12f7ff;
+  text-transform: capitalize;
+  margin-right: 10px;
+  border-radius: 5px;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.about-2 button:hover {
+  color: var(--second-bg-color);
+}
+
+.about-2 button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  z-index: -1;
+  height: 100%;
+  width: 0%;
+  transition: all 0.3s ease-in-out;
+}
+
+.about-2 button:hover::after {
+  width: 100%;
+  background: var(--hover--color);
+  box-shadow: var(--font-neon-text-shadow);
+}
+
+/* our services section style start */
+section {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+}
+
+section h6 {
+  position: relative;
+  /* border-left: 2px solid var(--second-bg-color); */
+}
+
+.h6-tags::before {
+  content: "|";
+  font-size: 30px;
+  padding-right: 10px;
+  animation: blink 0.8s infinite;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+h1 {
+  color: var(--hover--color);
+}
+
+.services .service-1 {
+  height: 100%;
+  width: 300px;
+  background: var(--second-bg-color);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.service-1 i {
+  color: var(--hover--color);
+  font-size: 50px;
+  padding: 25px 0;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  height: 100px;
+  width: 100px;
+}
+
+.service-1 p {
+  color: #f9f1f194;
+}
+
+.service-1 button {
+  position: relative;
+  background: var(--bg-color);
+  padding: 5px 7px;
+  color: var(--hover--color);
+  outline: 2px solid #12f7ff;
+  border: none;
+  text-transform: capitalize;
+  margin-right: 10px;
+  border-radius: 5px;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.service-1 button:hover {
+  color: var(--second-bg-color);
+}
+
+.service-1 button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  z-index: -1;
+  height: 100%;
+  width: 0%;
+  transition: all 0.3s ease-in-out;
+}
+
+.service-1 button:hover::after {
+  width: 100%;
+  background: var(--hover--color);
+  box-shadow: var(--font-neon-text-shadow);
+}
+
+/* our services section style end */
+/* <!-- ---------------
+our skills section start
+                --------------------- --> */
+.my-skills {
+  background: var(--second-bg-color);
+}
+.my-skills .my-flow-skill {
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+}
+
+.my-skills .tech-skills {
+  width: 100%;
+  height: 100%;
+  background: var(--second-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-skills .tech-section {
+  width: 100%;
+}
+
+.tech-skills .progress {
+  background-color: var(--bg-color);
+}
+
+.progress .progress-bar {
+  background-color: var(--hover--color);
+  box-shadow: var(--font-neon-text-shadow);
+}
+
+.tech-skills .tech-section span {
+  color: var(--text-color);
+  margin-top: 50px;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+/* my proffesinal skill styling start */
+.my-skills .prof-skills {
+  width: 100%;
+  height: 100%;
+}
+
+.prof-skills .loader {
+  background: transparent;
+  color: var(--text-color);
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: 8px solid var(--bg-color);
+  border-top-color: var(--hover--color);
+  box-shadow: var(--neon-box-shadow);
+}
+
+.prof-skills .ld-1 {
+  border-top-color: var(--hover--color);
+  border-right-color: var(--hover--color);
+}
+
+.prof-skills .ld-2 {
+  border-top-color: var(--hover--color);
+  border-right-color: var(--hover--color);
+  border-bottom-color: var(--hover--color);
+}
+
+.prof-skills .ld-3 {
+  border-color: var(--hover--color);
+}
+
+.prof-skills h2 {
+  position: relative;
+  top: 100px;
+}
+
+.prof-skills h6 {
+  color: var(--text-color);
+  margin-top: 5px;
+  text-align: center;
+}
+/* ------
+      our project section style start
+              --------------------------- */
+#project-container {
+  height: 100%;
+  width: 100%;
+  background: var(--bg-color);
+}
+
+#project-container span {
+  color: var(--text-color);
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+#project-container span:hover {
+  color: var(--hover--color);
+  text-shadow: var(--font-neon-text-shadow);
+}
+
+#project-container img {
+  transition: all 0.3s ease-out;
+}
+#project-container img:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+/* ------
+      our project section style end
+              --------------------------- */
+/* our contact section styling start */
+.contact-form {
+  height: 100%;
+  width: 100%;
+  background: var(--second-bg-color);
+}
+
+.contact-form form {
+  height: 100%;
+  width: 100%;
+  background: var(--second-bg-color);
+}
+
+form .form-floating input {
+  background: var(--bg-color);
+}
+
+form .form-floating input:focus {
+  color: var(--text-color);
+  background: var(--bg-color);
+  box-shadow: var(--neon-box-shadow);
+}
+
+form .form-floating textarea {
+  background-color: var(--bg-color);
+}
+
+form .form-floating textarea:focus {
+  background-color: var(--bg-color);
+}
+
+.form-floating button {
+  position: relative;
+  background: var(--bg-color);
+  padding: 5px 7px;
+  color: var(--hover--color);
+  outline: 2px solid #12f7ff;
+  border: none;
+  text-transform: capitalize;
+  margin-right: 10px;
+  border-radius: 5px;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-floating button:hover {
+  color: var(--second-bg-color);
+}
+
+.form-floating button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  z-index: -1;
+  height: 100%;
+  width: 0%;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-floating button:hover::after {
+  width: 100%;
+  background: var(--hover--color);
+  box-shadow: var(--font-neon-text-shadow);
+}
+
+/* ----------
+        our responsive part section start
+                -------------------------------- */
+@media (min-width: 992px) {
+  .intro-section {
+    height: 100vh;
+  }
+
+  .about-1 img {
+    height: 500px;
+  }
+
+  .about-2 p {
+    width: 400px;
+  }
+
+  section {
+    height: 100vh;
+  }
+
+  .img-blob::before {
+    left: 20%;
+    top: 10%;
+  }
+
+  /* my prof skills name tag */
+  .prof-skills h2 {
+    position: relative;
+    top: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+  .img-blob img {
+    /* height: 200px; */
+  }
+
+  .intro-detail p {
+    width: 100%;
+  }
+
+  .intro-section {
+    padding: 30px;
+  }
+
+  .about-1 img {
+    height: 400px;
+    padding-left: 50px;
+  }
+  .about-2 {
+    padding: 20px;
+  }
+
+  .about-2 p {
+    width: 100%;
+  }
+
+  #ser {
+    margin: 10px 0;
+  }
+
+  /* my skills section media query */
+  .my-skills .my-flow-skill {
+    height: 100%;
+  }
+
+  .prof-skills .loader {
+    margin-top: 30px;
+  }
+
+  .prof-skills h2 {
+    position: relative;
+    top: 0;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .img-blob img {
+    height: 300px;
+    padding-left: 20px;
+  }
+
+  .img-blob::before {
+    left: 0%;
+    top: 5%;
+    width: 90%;
+  }
+
+  .intro-detail p {
+    width: 100%;
+  }
+
+  .intro-section {
+    padding: 30px;
+  }
+
+  .cv-btn button {
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .services {
+    padding: 20px 0px;
+  }
+
+  .service-1,
+  #ser {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 340px) {
+  .cv-btn {
+    display: flex;
+  }
+
+  .cv-btn button {
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .about-container {
+    height: 100%;
+  }
+
+  .about-container .about-2 {
+    margin: 0;
+    padding: 50px 10px;
+  }
+
+  .about-container .about-1 img {
+    height: 400px;
+    padding-left: 20px;
+  }
+
+  .service-1,
+  #ser {
+    margin: 5px 2px;
+    width: 300px;
+  }
+}
+/* our responsive part section end */
